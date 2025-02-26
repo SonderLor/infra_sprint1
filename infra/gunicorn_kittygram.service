@@ -1,0 +1,9 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=sonder
+WorkingDirectory=/home/sonder/dev/yandex-practicum/infra_sprint1/backend
+ExecStart=/home/sonder/dev/yandex-practicum/infra_sprint1/backend/venv/bin/gunicorn --bind 0.0.0.0:8080 kittygram_backend.wsgi
+[Install]
+WantedBy=multi-user.target
